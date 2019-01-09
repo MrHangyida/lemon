@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var bill = require('./billApi/index.js');
-console.log(bill);
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -9,6 +8,9 @@ router.get('/', function(req, res, next) {
 });
 
 //添加账号
-router.post('/bill/addBill', bill.billfn);
+router.post('/bill/addBill', bill.addbill);
+
+//获取账号
+router.get('/bill/getBill', bill.getbill);
 
 module.exports = router;
